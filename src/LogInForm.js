@@ -6,7 +6,8 @@ export default class LogInForm extends Component {
         this.state = {
           username: null,
           password: null,
-          loggedIn: false
+          loggedIn: false,
+          error: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,11 +27,12 @@ export default class LogInForm extends Component {
                 loggedIn: !this.state.loggedIn
             });
         } else {
-            alert('incorrect credentials, motherfucker')
         }
       }
       validUserName() {
-        if (this.state.username === null) {
+        let username = this.state.username;
+        if (username === null) {
+            this.setState({error: 'Username must not be empty!'})
             return false;
         } else {
             return true;
@@ -38,8 +40,12 @@ export default class LogInForm extends Component {
       }
 
       validPassword() {
-        if (this.state.password === null) {
+        let password = this.state.password;
+        if (password === null) {
+            this.setState({error: 'Password must not be empty!'})
             return false;
+        } else if (password.length < 8) {
+            this.setState({error: 'Password must be 8 characters or longer!'})
         } else {
             return true;
         }
@@ -72,6 +78,7 @@ export default class LogInForm extends Component {
                    onChange={this.handleChange}
                    ></input>
           </div>
+          <p className="errorMessage">{this.state.error}</p>
           <button type="submit">Login</button>
         </form>
         )
