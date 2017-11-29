@@ -4,8 +4,8 @@ export default class LogInForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          username: null,
-          password: null,
+          username: '',
+          password: '',
           loggedIn: false,
           error: ''
         };
@@ -26,36 +26,35 @@ export default class LogInForm extends Component {
             this.setState({
                 loggedIn: !this.state.loggedIn
             });
-        } else {
         }
       }
       validUserName() {
-        let username = this.state.username;
-        if (username === null) {
+        let username = this.state.username.trim();
+        if (!username) {
             this.setState({error: 'Username must not be empty!'})
             return false;
-        } else {
-            return true;
         }
+        return true;
       }
 
       validPassword() {
-        let password = this.state.password;
-        if (password === null) {
+        let password = this.state.password.trim();
+        if (!password) {
             this.setState({error: 'Password must not be empty!'})
             return false;
         } else if (password.length < 8) {
             this.setState({error: 'Password must be 8 characters or longer!'})
-        } else {
-            return true;
+            return false;
         }
+        return true;
       }
       
       logInAgain() {
         this.setState({
           username: null,
           password: null,
-          loggedIn: !this.state.loggedIn
+          loggedIn: !this.state.loggedIn,
+          error: null
         });
       }
     
