@@ -1,35 +1,17 @@
 import React, { Component } from 'react';
+import Home from './components/Home';
 import './App.css';
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Button from "./components/Button";
+import { Route, Switch, Link } from 'react-router-dom'
+import RegistrationForm from './components/RegistrationForm'
 
-class App extends Component {
+
+export default class App extends Component {
   render() {
-
     return (
-      <div className="App">
-        <Header className="App-header">
-        </Header>
-        <Body></Body>
-        <div>
-          <label>Username</label>
-          <input type="text"></input>
-        </div>
-        <div>
-          <label>Password</label>
-          <input type="text"></input>
-        </div>
-        <button type="submit">Login</button>
-        <button type="create" >Create New Account</button>
-        <p><a href="/">Forgot Password?</a></p>
-      </div>
+        <Switch>
+          <Route exact path='/' component={ Home }/>
+          <Route exact path='/newAccount' component={ RegistrationForm }/>
+        </Switch>
     );
   }
 }
-
-
-
-
-
-export default App;
