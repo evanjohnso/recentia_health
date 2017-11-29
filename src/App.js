@@ -17,7 +17,6 @@ export default class App extends Component {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo tincidunt nibh, ac vulputate eros tempus eu. Sed malesuada lobortis elit vel tincidunt. Nunc at nulla sit amet massa condimentum sagittis id vitae augue. Nullam placerat risus accumsan, aliquam augue sagittis, molestie neque. Proin a lacus tincidunt, molestie dolor a, placerat diam. Aenean dictum elit in mauris eleifend, quis feugiat arcu fermentum. Aliquam sapien nibh, ornare ut aliquam et, dictum a ligula. Etiam ac orci sodales, congue lacus eu, vulputate sapien. Nullam consectetur laoreet justo sit amet lacinia. Etiam suscipit augue et venenatis ultricies. Proin imperdiet ex vitae nisi varius suscipit eget at elit.
         </p>
         <LogInForm />
-        
         <button>Create New Account</button>
         <p><a href="/">Forgot Password?</a></p>
       </div>
