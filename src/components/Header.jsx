@@ -1,11 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 
-class Header extends React.Component{
+export default class Header extends Component{
    render(){
      return (
-       <h1>Recentia Health</h1>
+       <h1 className = "App-header">Recentia Health</h1>
        )
   }
 }
-
-export default Header;

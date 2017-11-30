@@ -7,8 +7,7 @@ import Body from "./Body";
 export default class Home extends Component {
     render() {
         return ( <div className="App">
-          <Header className="App-header">
-          </Header>
+          <Header></Header>
           <Body></Body>
           <LogInForm />
           <button><Link to='/newAccount'>Create New Account</Link></button>
